@@ -94,11 +94,34 @@ var rateChecker = arrayCalc(ages, maxHeartRate);
 console.log(rateChecker);
 
 
+// First Class Function returning a Function
 
 
+function interviewQuestion(job){
+  if (job === 'teacher'){
+    return function(name){
+      console.log('What Subject do you teach? ' + name);
+    }
+  }else if (job === 'designer'){
+    return function(name){
+      console.log(name + ', Please tell us about UX designing?');
+    } 
+  }else {
+    return function(name){
+      console.log('There is no Candidate for this Session!');
+    }
+  }
+};
 
 
+var teacherQuestion = interviewQuestion('teacher');
+teacherQuestion('Mark');
 
+var designerQuestion = interviewQuestion('designer');
+designerQuestion('Mark');
+designerQuestion('Ibrahim');
+
+interviewQuestion('lecturer')('John');
 
 
 
