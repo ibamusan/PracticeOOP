@@ -125,11 +125,19 @@ interviewQuestion('lecturer')('John');
 
 
 
+// Immediately invoke function Expression(IIFE)
+
+  function game (){
+    var gameScore = Math.random() * 10;
+    console.log(gameScore >= 5);
+  }
+  game();
 
 
 
-
-
-
+(function (goodChance) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodChance)
+})(3);
 
 
